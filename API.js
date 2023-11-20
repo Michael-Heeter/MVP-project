@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import postgres from 'postgres'
 import pg from 'pg'
 import cors from 'cors'
-require('dotenv').config()
+dotenv.config()
 
 const {Pool} = pg
 

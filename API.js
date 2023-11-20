@@ -1,18 +1,19 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import postgres from 'postgres'
-import pg from 'pg'
+import {Pool} from 'pg'
 import cors from 'cors'
 dotenv.config()
 
-const {Pool} = pg
-    
+const dbString = process.env.DATABASE_URL
+
+const pool = new Pool({
+    connectionString: dbString
+})
 
 const app = express()
 const PORT = process.env.PORT
-const pool = new Pool ({
-    connectionString: process.env.DATABASE_URL
-})
+
 
 app.use(cors())
 app.use(express.json())

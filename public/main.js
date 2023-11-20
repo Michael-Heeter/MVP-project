@@ -3,7 +3,7 @@ const pg = require('pg')
 const {Pool} = pg
 
 const apiUrl = new Pool ({
-    connectionString: process.env.DATABASE_URL
+    process.env.DATABASE
 })
 
 const $player = $('#player')

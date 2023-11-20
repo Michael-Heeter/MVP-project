@@ -1,0 +1,109 @@
+@import url('href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MedievalSharp', cursive;
+}
+
+#welcome {
+    background-color: rgba(128,128,128,0.3);
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo {
+    margin: 0 1rem;
+    font-size: 3rem
+}
+
+#list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.listing {
+    margin: 0 2rem;
+    font-size: 1.6rem;
+    padding: .2rem .4rem;
+    transition: .5s color ease;
+}
+
+.listing:hover {
+    cursor: pointer;
+    color: rgba(200,55,55,1)
+}
+
+#undercarriage {
+    background: url('https://images.unsplash.com/photo-1605870445919-838d190e8e1b?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    font-size: 3rem;
+    color: #EBC000;
+}
+
+
+.characterProficienyList {
+    align-items: center;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.createCharacterDiv {
+    text-align: center;
+    display: inline-flex;
+    margin: 4rem;
+    padding: 1.7rem;
+}
+
+#createCampaignDiv {
+    text-align: center;
+    display: inline-flex;
+    padding: 0.7rem;
+}
+
+#createCampaignBtn {
+    text-align: center;
+    display: flex;
+    margin-left: 0.3rem;
+    width: 1rem;
+}
+
+.characterBtns {
+    display: flex;
+    margin: 0.5rem;
+}
+
+.characterViewBtn {
+    background-color: lightblue;
+    display: flex;
+    margin: 0.3rem;
+}
+
+.characterEditBtn {
+    background-color: rgb(1, 208, 1);
+    display: flex;
+    margin: 0.3rem;
+}
+
+.characterDeleteBtn {
+    background-color: red;
+    display: flex;
+    margin: 0.3rem;
+}
+
+#createCampaign {
+    
+    margin-right: 1.5rem;
+}
+
+.

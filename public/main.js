@@ -1,3 +1,8 @@
+const dotenv = require('dotenv')
+dotenv.config()
+
+const apiUrl = process.env.DATABASE
+
 const $player = $('#player')
 const $campaign = $('#campaign')
 const $thewhole = $('#the-whole')

@@ -1,11 +1,3 @@
-const pg = require('pg')
-
-const {Pool} = pg
-
-const apiUrl = new Pool ({
-    process.env.DATABASE
-})
-
 const $player = $('#player')
 const $campaign = $('#campaign')
 const $thewhole = $('#the-whole')

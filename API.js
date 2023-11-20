@@ -6,6 +6,7 @@ import cors from 'cors'
 dotenv.config()
 
 const {Pool} = pg
+    
 
 const app = express()
 const PORT = process.env.PORT

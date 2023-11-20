@@ -1,4 +1,4 @@
-import pg from 'pg'
+require(pg)= 'pg'
 
 const {Pool} = pg
 

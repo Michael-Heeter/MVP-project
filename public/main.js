@@ -1,5 +1,3 @@
-dotenv.config()
-
 const apiUrl = process.env.DATABASE
 
 const $player = $('#player')

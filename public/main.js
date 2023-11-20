@@ -1,4 +1,4 @@
-require(pg)= 'pg'
+const pg = require('pg')
 
 const {Pool} = pg
 

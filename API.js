@@ -3,19 +3,14 @@ import dotenv from 'dotenv'
 import postgres from 'postgres'
 import pg from 'pg'
 import cors from 'cors'
+require('dotenv').config()
 
 const {Pool} = pg
 
 const app = express()
-const PORT = 4500
-const sql = postgres("postgres://postgres_dnd_character_creator_user:orzE6HawBUFvGl6qiEzENlQR2WxRGrWn@dpg-clcbe1jmot1c73den870-a.ohio-postgres.render.com/postgres_dnd_character_creator?ssl=true")
-
+const PORT = process.env.PORT
 const pool = new Pool ({
-    user: "postgres",
-    host: "localhost",
-    database: "dnd_character_creator",
-    password: "AllThePi",
-    port: "5432"
+    connectionString: process.env.DATABASE_URL
 })
 
 app.use(cors())

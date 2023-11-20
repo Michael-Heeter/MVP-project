@@ -1,10 +1,11 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import postgres from 'postgres'
-import {Pool} from 'pg'
+import pg from 'pg'
 import cors from 'cors'
 dotenv.config()
 
+const {Pool} = pg
 const dbString = process.env.DATABASE_URL
 
 const pool = new Pool({
@@ -21,9 +22,7 @@ app.use(express.static("public"))
 
 app.get("/api/player", async (req,res) => {
     try{
-        const client = await pool.connect()
         const result = await pool.query(`SELECT * FROM player`)
-        client.release()
         res.status(200).json(result.rows)
     }catch(err){
         res.status(err).send('internal server error on get player')
@@ -33,9 +32,7 @@ app.get("/api/player", async (req,res) => {
 app.get('/api/player/:id', async (req,res) => {
     try{
         const {id} = req.params
-        const client = await pool.connect()
         const result = await pool.query(`SELECT character_table.id, character_table.name, character_table.subrace, character_table.race, character_table.subclass, character_table.class FROM character_table WHERE player_id=${id}`)
-        client.release()
         res.status(200).json(result.rows)
     }catch(err){
         res.status(err).send('internal server error on get player:id')
@@ -44,9 +41,7 @@ app.get('/api/player/:id', async (req,res) => {
 
 app.get("/api/campaign", async (req,res) => {
     try{
-        const client = await pool.connect()
         const result = await pool.query(`SELECT * FROM campaign`) 
-        client.release()
         res.json(result.rows)
     }catch(err){
         res.status(500).send('internal server error on get campaign')

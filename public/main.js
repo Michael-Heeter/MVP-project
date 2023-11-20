@@ -1,5 +1,3 @@
-const apiUrl = process.env.DATABASE
-
 const $player = $('#player')
 const $campaign = $('#campaign')
 const $thewhole = $('#the-whole')
@@ -26,7 +24,7 @@ $player.on('click', function() {
     const createPlayerlist = document.createElement('div')
     createPlayerlist.setAttribute('id', 'playerlist')
     
-    const url = apiUrl + '/api/player'
+    const url = '/api/player'
     $.ajax({
         url,
         type: 'GET',
@@ -57,7 +55,7 @@ $(document.body).on('click', '.playerListName', function(event) {
 })
 
 function getCharacters(player_id) {
-    const url = apiUrl + connectionPoint + `/api/player/${player_id}`
+    const url = `/api/player/${player_id}`
     // Assuming playerlist is defined and needs to be removed before populating new character info
     clear()
 
@@ -130,7 +128,7 @@ $campaign.on('click', function() {
     const createcampaignlist = document.createElement('div')
     createcampaignlist.setAttribute('id', 'campaignlist')
 
-    const url = apiUrl + connectionPoint + '/api/campaign'
+    const url = '/api/campaign'
     $.ajax({
         url,
         type: 'GET',
@@ -164,7 +162,7 @@ $campaign.on('click', function() {
 
 
 function getPlayers(campaign_id) {
-    const url = apiUrl + connectionPoint + `/api/player/${campaign_id}`
+    const url = `/api/player/${campaign_id}`
     // Assuming playerlist is defined and needs to be removed before populating new character info
     clear()
 
@@ -254,7 +252,7 @@ $(document.body).on('click', '#campaignCreate', function(event) {
 
     const createcampaign = document.createElement('div')
     createcampaign.setAttribute('id', 'createdCampaign')
-    const url = apiUrl + connectionPoint + '/api/campaign'
+    const url = '/api/campaign'
 
     const newcampaign = {
         dm: $('#campaignDMEntry').val(),
@@ -286,7 +284,7 @@ $(document.body).on('click', '#campaignCreate', function(event) {
 
     const createcampaign = document.createElement('div')
     createcampaign.setAttribute('id', 'createdCampaign')
-    const url = apiUrl + connectionPoint +  '/api/campaign'
+    const url =  '/api/campaign'
 
     const newcampaign = {
         dm: $('#campaignDMEntry').val(),
@@ -320,7 +318,7 @@ $(document.body).on('click', '.characterViewBtn', function(event) {
     console.log(elementClass[0])
     clear()
 
-    const url = apiUrl + connectionPoint + `/api/character/${parseInt(classes[0])}`
+    const url = `/api/character/${parseInt(classes[0])}`
 
     const charactersheet = document.createElement('div')
     charactersheet.setAttribute('id', 'charactersheet')
@@ -344,7 +342,7 @@ $(document.body).on('click', '.characterDeleteBtn', function(event) {
     const classes = elementClass.split(' ')
     clear()
 
-    const url = apiUrl + connectionPoint + `/api/character/${parseInt(classes[0])}`
+    const url = `/api/character/${parseInt(classes[0])}`
 
     const deletechar = document.createElement('div')
     deletechar.setAttribute('id', 'deletechar')
@@ -442,7 +440,7 @@ function createSection(id, className, texts) {
 $(document.body).on('click','#createCharacterBtn', function () {
     const createnewcharacter = document.createElement('div')
     createnewcharacter.setAttribute('id', 'createnewcharacter')
-    const url = apiUrl + connectionPoint + '/api/character'
+    const url = '/api/character'
 
     const thenewcharacter = {
         name: $('#info-0').val(),
@@ -506,7 +504,7 @@ $(document.body).on('click','#createCharacterBtn', function () {
 $(document.body).on('click','#createCharacterBtn', function () {
     const createnewcharacter = document.createElement('div')
     createnewcharacter.setAttribute('id', 'createnewcharacter')
-    const url = apiUrl + connectionPoint + `/api/character/${parseInt()}`
+    const url = `/api/character/${parseInt()}`
 
     const creatingnewcharacter = {
         name: $('#info-0').val(),
@@ -575,7 +573,7 @@ $(document.body).on('click', '.characterEditBtn', function() {
     createnewcharacter.setAttribute('id', 'createnewcharacter')
     clear()
     createCharSheet()
-    const url = apiUrl + connectionPoint + `/api/character/${classes[0]}`
+    const url = `/api/character/${classes[0]}`
     try{
         $.ajax({
         url,
@@ -631,7 +629,7 @@ $(document.body).on('click', '.characterEditBtn', function() {
 })
 
 $(document.body).on('click', '#confirmBtn', function(){
-    const url = apiUrl + connectionPoint + `/api/character/${someChar}`
+    const url = `/api/character/${someChar}`
     const editcharacter = {
         name: $('#info-0').val(),
         race: $(`#info-1`).val(),
